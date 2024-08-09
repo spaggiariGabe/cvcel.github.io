@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo Gabriel Spaggiari</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-size: cover;
+        }
+        nav {
+            background-color: rgba(135, 209, 193, 0.5);
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 12px;
+            background-color: #000;
+            margin: 0 4px;
+        }
+        nav a:hover {
+            background-color: rgba(33, 66, 60, 0.815);
+        }
+        .intro-container, .intro-container2, .intro-container3, .intro-container4 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(202, 252, 241, 0.932);
+            border-radius: 10px;
+            position: relative;
+            max-width: 90%;
+        }
+        .intro-image {
+            border-color: rgba(5, 41, 27, 0.842);
+            border-radius: 10px;
+            border-width: 1px;
+            border-style: double;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .intro-text {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .banner-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            height: 300px;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+        .banner img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .banner img.active {
+            opacity: 1;
+        }
+        .indicators {
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .indicator {
+            height: 10px;
+            width: 10px;
+            background-color: rgba(98, 156, 144, 0.8);
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 5px;
+            transition: background-color 0.8s;
+            cursor: pointer;
+        }
+        .indicator.active {
+            background-color: rgb(241, 144, 217);
+        }
+        .buttons {
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .button {
+            background-color: #4ca793;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #40998a;
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: rgba(98, 156, 144, 0.5);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .contact-banner {
+            position: relative;
+            max-width: 100%;
+            height: 200px;
+            margin: 20px auto;
+            background-image: url('game2_be.jpg');
+            background-size: cover;
+            background-blend-mode: overlay;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .contact-banner a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 24px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .contact-banner a:hover {
+            color: #f190d9;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+            }
+            nav a {
+                margin: 5px 0;
+                font-size: 14px;
+            }
+            .intro-container, .intro-container2, .intro-container3, .intro-container4 {
+                margin: 10px auto;
+                padding: 10px;
+                font-size: 16px;
+            }
+            .intro-image {
+                max-width: 200px;
+            }
+            .banner-container {
+                height: 200px;
+            }
+            .indicators {
+                bottom: 5px;
+            }
+            .indicator {
+                height: 8px;
+                width: 8px;
+            }
+            .buttons .button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+            .contact-banner {
+                height: 150px;
+            }
+            .contact-banner a {
+                font-size: 18px;
+                margin: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .intro-container, .intro-container2, .intro-container3, .intro-container4 {
+                margin: 5px auto;
+                padding: 5px;
+                font-size: 14px;
+            }
+            .intro-image {
+                max-width: 150px;
+            }
+            .banner-container {
+                height: 150px;
+            }
+            .indicators {
+                bottom: 2px;
+            }
+            .indicator {
+                height: 6px;
+                width: 6px;
+            }
+            .buttons .button {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            .contact-banner {
+                height: 100px;
+            }
+            .contact-banner a {
+                font-size: 14px;
+                margin: 0 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#minha-trajetoria">Minha Trajetória</a>
+        <a href="#competencias-habilidades">Competências e Habilidades</a>
+        <a href="#motivacao">Motivação</a>
+        <a href="#trabalhos">Trabalhos</a>
+        <a href="#contatos">Contatos</a>
+    </nav>
+
+    <div class="intro-container" id="sobre">
+        <div class="intro-text">
+            <img src="me.png" alt="Foto Gabriel Spaggiari" class="intro-image">
+            <h2>Gabriel Spaggiari!</h2>
+            <p>Bem-vindo ao meu currículo online!</p> 
+            <p>Profissional experiente em design com sólida formação em tecnologia em desenvolvimento, buscando oportunidade de estágio na área de tecnologia para alavancar minha carreira e contribuir com minhas habilidades.</p>
+        </div>      
+    </div>
+
+    <div class="intro-container2" id="minha-trajetoria">
+        <div class="intro-text">
+            <h3>Minha trajetória:</h3>
+            <p>Graduado em Design pela Ibero Americano/Anhanguera: Ampla experiência em Design Gráfico, com foco em Identidade Visual, UX/UI, Logos, Edição de Imagens, Banners, Panfletos, Impressos, Websites, Produtos, Vetores, Modelagem 3D, etc.</p>
+            <p>Formações técnicas em Computadores e Administração: Base sólida em hardware, software e conceitos administrativos, complementando minhas habilidades em tecnologia.</p>
+            <p>Tecnólogo em Análise e Desenvolvimento de Sistemas pela USCS: Em fase final de graduação, com previsão de conclusão em Dezembro/2024. Dominando linguagens de programação e metodologias de desenvolvimento.</p>
+        </div>
+    </div>
+
+    <div class="intro-container2" id="competencias-habilidades">
+        <div class="intro-text">
+            <h3>Competências e Habilidades:</h3>
+            <p>Comunicação eficaz: Me expresso de forma clara, concisa e objetiva, tanto em português quanto em inglês.</p>
+            <p>Trabalho em equipe: Colaboro de forma proativa e eficiente, buscando o sucesso do time.</p>
+            <p>Aprendizagem contínua: Sou apaixonado por novas tecnologias e busco me atualizar constantemente.</p>
+            <p>Dedicação e iniciativa: Tenho foco em resultados e me dedico a entregar trabalhos de alta qualidade.</p>
+            <p>Inglês avançado e português fluente.</p>
+            <h3>Habilidades técnicas:</h3>
+            <p>Linguagens de programação: HTML, CSS, Javascript, PHP, SQL, C/C#, Python, Java.</p>
+            <p>Pacote Adobe e Office: Photoshop, Illustrator, InDesign, Word, Powerpoint, Excel.</p>
+        </div>
+    </div>
+
+    <div class="intro-container3" id="motivacao">
+        <div class="intro-text">
+            <h3>Motivação:</h3>
+            <p>Estou em um momento de transição de carreira, migrando do Design para a área de tecnologia. Acredito que minhas habilidades em design, combinadas com a minha formação em tecnologia, me tornam um candidato diferenciado para oportunidades de estágio em tecnologia.</p>
+            <p>Sou um profissional proativo, que já participou de várias experiências, dedicado e com grande potencial de aprendizado. Tenho certeza de que posso contribuir significativamente para qualquer equipe.</p>
+        </div>
+    </div>
+
+    <div class="intro-container4" id="trabalhos">
+        <div class="intro-text">
+            <h3>Alguns dos meus trabalhos:</h3>
+            <div class="buttons">
+                <a href="https://github.com/spaggiariGabe" class="button" target="_blank">Programação</a>
+                <a href="https://www.behance.net/spaggiariart" class="button" target="_blank">Design</a>
+                <a href="https://www.instagram.com/spaggiarigabriel" class="button" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner-container">
+        <div class="banner">
+            <img src="nalatavalk.png" class="active" alt="Imagem 1">
+            <img src="viper_BE.png" alt="Imagem 2">
+            <img src="psi_BE.png" alt="Imagem 3">
+            <img src="game1_be.png" alt="Imagem 4">
+        </div>
+        <div class="indicators">
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+        </div>
+    </div>
+
+    <div class="contact-banner" id="contatos">
+        <a href="https://wa.me/+5511949674045" target="_blank">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/gabriel-spaggiari-a7b52521b/" target="_blank">LinkedIn</a>
+        <a href="mailto:gabspaggiari@gmail.com">Email</a>
+    </div>
+
+    <footer>
+        <!-- Espaço reservado para o conteúdo do footer -->
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.banner img');
+        const indicators = document.querySelectorAll('.indicator');
+
+        function showImage(index) {
+            images[currentIndex].classList.remove('active');
+            indicators[currentIndex].classList.remove('active');
+            currentIndex = index;
+            images[currentIndex].classList.add('active');
+            indicators[currentIndex].classList.add('active');
+        }
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showImage(index);
+            });
+        });
+
+        function showNextImage() {
+            let nextIndex = (currentIndex + 1) % images.length;
+            showImage(nextIndex);
+        }
+
+        setInterval(showNextImage, 2000); // Mudar imagem a cada 2 segundos
+    </script>
+</body>
+</html>
